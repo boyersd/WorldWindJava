@@ -6,6 +6,16 @@
 
 .idea/workspace.xml
 
+.gradle
+
+.classpath
+
+.project
+
+.settings
+
+WorldWindWorkspace
+
 build
 
 classes
