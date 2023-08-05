@@ -7,22 +7,11 @@ repositories {
     mavenCentral()
 }
 
-tasks.withType(JavaCompile) {
-    options.release = 11
-}
-
 dependencies {
-	def gluegenVersion="2.3.2"
     dependencies {
-        //implementation fileTree(dir: "${projectDir}/lib-external", includes: ['**/*.jar'])
-        implementation fileTree(dir: "${projectDir}/", includes: ['*.jar'], excludes: ['*natives*','junit*'])
+        implementation fileTree(dir: "${projectDir}/", includes: ['*.jar'])//, excludes: ['*natives*','junit*'])
         testImplementation(files("${projectDir}/junit-4.5.jar"))
     }
-	//implementation group: 'org.jogamp.gluegen', name: 'gluegen-rt-main', version: gluegenVersion
-	//implementation group: 'org.jogamp.jogl', name: 'jogl-all-main', version: '2.3.2'
-	//implementation group: 'org.gdal', name: 'gdal', version: '1.7.2'
-	//implementation group: 'org.jogamp.gluegen', name: 'gluegen-rt-main', version: gluegenVersion
-	
 }
 
 
@@ -30,7 +19,6 @@ sourceSets {
     main {
         java {
             srcDir 'src'
-            //include(project.fileTree('src/**'))
         }
         resources {
             srcDir 'src'
